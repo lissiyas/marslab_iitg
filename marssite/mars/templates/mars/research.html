@@ -1,0 +1,59 @@
+{% extends "mars/home.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'mars/research.css' %}">
+
+
+<div class="container">
+    {% if ongoing %}
+    
+    <div class="project-title">ONGOING PROJECTS</div>
+    <hr class="my-4 custom-line">
+    {% for research in ongoing%}
+    <div class="project-card">
+      <div class="project-card-content">
+        <div class="project-title-card">{{ research.title }}</div>
+        <div class="project-details">
+          {{ research.details }}
+        </div>
+        <div class="project-summary">
+          {{ research.summary }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- Add more ongoing project cards as needed -->
+    {% if completed %}
+    
+    <div class="project-title">COMPLETED PROJECTS</div>
+    
+    <hr class="my-4 custom-line">
+    {% for research in completed %}
+    <div class="project-card">
+      <div class="project-card-content">
+        <div class="project-title-card">{{ research.title }}</div>
+        <div class="project-details">
+          {{ research.details }}
+        </div>
+        <div class="project-summary">
+          {{ research.summary }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- Add more completed project cards as needed -->
+
+   
+    
+
+</div>
+
+
+
+
+
+{% endblock content %}

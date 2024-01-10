@@ -1,0 +1,85 @@
+.container{
+    min-height:100vh;
+    
+}
+
+
+/* publication page css*/
+.heading{
+  
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  
+  
+}
+
+.card-subtitle{
+   color: #A73121;
+   font-weight: 600;
+}
+
+.card-title{
+  color: black;
+  font-weight: 800;
+
+}
+.publications {
+  background-color: #F2F1EB;
+  
+
+width: 100%;
+
+}
+.publication-card{
+  background-color: #F2F1EB;
+  
+}
+
+.dropdown-menu a {
+  cursor: pointer;
+}
+
+.btn-publication {
+  border: 1px solid green; /* Added 'solid' as the border style */
+  margin-left: 10px;
+}
+
+.card-start{
+   
+    box-shadow: inset;
+    width: 100%;
+
+}
+.card{
+    border: none;
+    
+}
+/*new cssssssssssssssssssssssss*/
+
+
+
+  .content-container {
+    display: none;
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+  }
+  .translate-down{
+    opacity: 1;
+    transform: translateY(100%);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+ 
+  .custom-line{
+    border-color: darkorange;
+  }

@@ -1,0 +1,124 @@
+{% extends "mars/home.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'mars/nptel.css' %}">
+
+
+
+<div class="container mx-auto justify-content-center align-items-center">
+
+
+
+  <div class="main-heading d-flex justify-content-center align-items-center">
+    <h1 style="font-size: 46px;">Welcome To Multi-core ARchitecture and Systems Lab</h1>
+
+  </div>
+
+
+
+
+  <div id="carouselExampleInterval" class="carousel slide custom-carousel justify-content-center align-items-center"
+    data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="{% static 'mars/board.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="{% static 'mars/vega.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'mars/Team.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+
+  <div class="row ml-2 pb-3 mr-2 home-down">
+    <div class="col-md-8 heading_main mt-5">
+      <!-- Small div container on the left -->
+      <div class="content justify-content-center">
+        <p class="heading">Advances in the VLSI process technology helped in realizing multi-core processors to exploit
+          application-level parallelism. Multiple applications are running on these cores and the average demand per
+          core for the shared resources like caches, interconnect and main memory is varying in nature. Overall system
+          performance depends on how well one can utilize the shared resources of a multi-core processor, such as last
+          level cache (LLC), network-on-chip (NoC), and main memory (DRAM). Managing shared resources in a highly
+          parallel system is one of the most fundamental challenges that we face. Performance of a multi-core system
+          depends on computation time, inter core communication delay and efficiency of on-chip memory systems.</p>
+        <p>In order to supply the data as quickly as possible to the processor, efficient cache designs along with
+          various replacement policies are proposed to utilize the last level shared cache efficiently. Unfortunately,
+          most of the techniques assume constant main memory latency in their evaluations. But the actual latency in
+          retrieving data from main memory depends on various factors such as the congestion in the NoC, main memory
+          scheduling mechanism, etc. Scheduling decisions taken at main memory may have significant impact on both
+          latency as well as power consumption.</p>
+      </div>
+    </div>
+
+
+    <div class="col-md-4 side-news">
+      <div class="text-center">
+        <h2 class="news_new mt-5">News</h2>
+      </div>
+      <div class="running-news-container">
+
+        <div class="card-body side-news-body align-items-center pb-2">
+          {% for post in posts %}
+          <div class="d-flex  align-items-center news-set">
+            <img src="{% static 'mars/new-2.gif' %}" class="ml-2" height="20px" width="35px">
+            <p class="card-text news-body mt-2 ml-2">{{ post.body }}</p>
+          </div>
+
+          {% endfor %}
+        </div>
+        <a href="{% url 'news' %}" class="scroll-link">Read More.</a>
+      </div>
+    </div>
+
+
+
+
+  </div>
+  <div class="row justify-content-center align-items-center mb-4">
+
+
+    <div class="card mr-4 card-nptel" style="width: 21rem; ">
+
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <div class="ag-courses-item_bg"></div>
+        <p class="card-text">
+          </p>
+        <a href="https://www.youtube.com/watch?v=TE4cJqrIHvI&list=PLwdnzlV3ogoUT7g3BySY2QQesG3eB4dss" class="btn btn-primary">Go To Course</a>
+      </div>
+    </div>
+    <
+  </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+

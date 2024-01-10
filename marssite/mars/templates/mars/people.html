@@ -1,0 +1,277 @@
+{% extends "mars/home.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'mars/people.css' %}">
+
+
+
+
+
+
+<div class="container d-flex flex-column align-items-center container-faculty" id="people-section" style="display: none;">
+  
+  <div class="fading-rectangle">
+    <div class="mt-lg-2 faculty-title">
+      <h1>FACULTY</h1>
+    </div>
+  </div>
+
+  <div class="card text-center faculty-card">
+    <div class="image-faculty">
+      <img src="{% static 'mars/faculity.jpg' %}" href="https://www.iitg.ac.in/johnjose/" class="card-img-top img-fluid" alt="...">
+    </div>
+
+    <div class="faculty-body d-flex flex-column justify-content-center align-items-center mx-2">
+      <h5 class="card-title font-weight-bold mb-0">Dr. John Jose</h5>
+      <p class="card-text mb-0">Associate Professor</p>
+      <p class="card-text mb-0">Dept. of Computer Science and Engineering</p>
+      <p class="card-text mb-0">Indian Institute of Technology Guwahati</p>
+      <div class="dblp">
+        <a href="https://dblp.org/pid/123/7042.html" class="btn btn-outline-success dblp-text">Publication DBLP</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="doc">
+  
+
+
+  
+
+  <!--------------------------------------------------POSTDOC scholars------------------------------------------------------------->
+  {% if post_scholars %}
+  <div class="section mt-4">
+      
+      <div class="container-fluid d-flex justify-content-center align-items-center my-2">
+          <h1 class="people-title">POSTDOC SCHOLARS</h1>
+      </div>
+      
+      
+      <div class="table-responsive">
+          <table class="table table-hover">
+              <thead class="table-dark">
+                  <tr>
+                    <th scope="col" class="col-slno">Sl No</th>
+                    <th scope="col" class="col-name-image">Name  </th>
+                    <th scope="col" class="col-details">Details</th>
+                  </tr>
+              </thead>
+              <tbody >
+                  {% for team in post_scholars %}
+                  <tr>
+                      <td class="text-center">{{ forloop.counter }}</td>
+                      <td class="text-center">
+                        <div class="image-container">
+                            <img src="{{ team.image.url }}" alt="Profile Photo" class="img-fluid mb-2">
+                        </div>
+                          <strong>{{ team.name }}</strong>
+                      </td>
+                      <td>
+                          <strong>Project Topic:</strong> {{ team.project_topic }}<br>
+                          <strong>Education:</strong> {{ team.education }}<br>
+                          <strong>Designation:</strong> {{ team.current_designation }}<br>
+                          <a href="{{ team.url }}" class="btn btn-outline-success btn-sm">Read More</a>
+                      </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
+  </div>
+  {% endif %}
+  
+ <!--------------------------------------------------end------------------------------------------------------------->
+
+
+ <!--------------------------------------------------phd scholars------------------------------------------------------------->
+ {% if research_scholars %}
+ <div class="section mt-4">
+     
+     <div class="container-fluid d-flex justify-content-center align-items-center my-2">
+         <h1 class="people-title">RESEARCH SCHOLARS</h1>
+     </div>
+     
+     
+     <div class="table-responsive">
+         <table class="table table-hover">
+             <thead class="table-dark">
+                 <tr>
+                  <th scope="col" class="col-slno">Sl No</th>
+                  <th scope="col" class="col-name-image">Name  </th>
+                  <th scope="col" class="col-details">Details</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 {% for team in research_scholars %}
+                 <tr>
+                     <td class="text-center">{{ forloop.counter }}</td>
+                     <td class="text-center">
+                        <div class="image-container">
+                            <img src="{{ team.image.url }}" alt="Profile Photo" class="img-fluid mb-2">
+                        </div>
+                         <strong>{{ team.name }}</strong>
+                     </td>
+                     <td>
+                         <strong>Project Topic:</strong> {{ team.project_topic }}<br>
+                         <strong>Education:</strong> {{ team.education }}<br>
+                         <strong>Designation:</strong> {{ team.current_designation }}<br>
+                         <a href="{{ team.url }}" class="btn btn-outline-success btn-sm">Read More</a>
+                     </td>
+                 </tr>
+                 {% endfor %}
+             </tbody>
+         </table>
+     </div>
+ </div>
+ {% endif %}
+ 
+<!--------------------------------------------------end------------------------------------------------------------->
+
+ 
+<!--------------------------------------------------Mtech scholars------------------------------------------------------------->
+{% if mtech_scholars %}
+<div class="section mt-4">
+    
+    <div class="container-fluid d-flex justify-content-center align-items-center my-2">
+        <h1 class="people-title">MTECH SCHOLARS</h1>
+    </div>
+    
+    
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                  <th scope="col" class="col-slno">Sl No</th>
+                  <th scope="col" class="col-name-image">Name  </th>
+                  <th scope="col" class="col-details">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in mtech_scholars %}
+                <tr>
+                    <td class="text-center">{{ forloop.counter }}</td>
+                    <td class="text-center">
+                        <div class="image-container">
+                            <img src="{{ team.image.url }}" alt="Profile Photo" class="img-fluid mb-2">
+                        </div>
+                        <strong>{{ team.name }}</strong>
+                    </td>
+                    <td>
+                        <strong>Project Topic:</strong> {{ team.project_topic }}<br>
+                        <strong>Education:</strong> {{ team.education }}<br>
+                        <strong>Designation:</strong> {{ team.current_designation }}<br>
+                        <a href="{{ team.url }}" class="btn btn-outline-success btn-sm">Read More</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
+ <!--------------------------------------------------end------------------------------------------------------------->
+ 
+
+<!--------------------------------------------------Btech scholars------------------------------------------------------------->
+{% if btech_scholars %}
+<div class="section mt-4">
+    
+    <div class="container-fluid d-flex justify-content-center align-items-center my-2">
+        <h1 class="people-title">BTECH SCHOLARS</h1>
+    </div>
+    
+    
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                  <th scope="col" class="col-slno">Sl No</th>
+                  <th scope="col" class="col-name-image">Name  </th>
+                  <th scope="col" class="col-details">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in btech_scholars %}
+                <tr>
+                    <td class="text-center">{{ forloop.counter }}</td>
+                    <td class="text-center">
+                        <div class="image-container">
+                            <img src="{{ team.image.url }}" alt="Profile Photo" class="img-fluid mb-2">
+                        </div>
+                        <strong>{{ team.name }}</strong>
+                    </td>
+                    <td>
+                        <strong>Project Topic:</strong> {{ team.project_topic }}<br>
+                        <strong>Education:</strong> {{ team.education }}<br>
+                        <strong>Designation:</strong> {{ team.current_designation }}<br>
+                        <a href="{{ team.url }}" class="btn btn-outline-success btn-sm">Read More</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
+ <!--------------------------------------------------end------------------------------------------------------------->
+
+ <!--------------------------------------------------Project scholars------------------------------------------------------------->
+ {% if project_scholars %}
+ <div class="section mt-4">
+     
+     <div class="container-fluid d-flex justify-content-center align-items-center my-2">
+         <h1 class="people-title">PROJECT STAFF</h1>
+     </div>
+     
+     
+     <div class="table-responsive">
+         <table class="table table-hover">
+             <thead class="table-dark">
+                 <tr>
+                  <th scope="col" class="col-slno">Sl No</th>
+                  <th scope="col" class="col-name-image">Name  </th>
+                  <th scope="col" class="col-details">Details</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 {% for team in project_scholars %}
+                 <tr>
+                     <td class="text-center">{{ forloop.counter }}</td>
+                     <td class="text-center">
+                        <div class="image-container">
+                            <img src="{{ team.image.url }}" alt="Profile Photo" class="img-fluid mb-2">
+                        </div>
+                        <strong>{{ team.name }}</strong>
+                     </td>
+                     <td>
+                         <strong>Project Topic:</strong> {{ team.project_topic }}<br>
+                         <strong>Education:</strong> {{ team.education }}<br>
+                         <strong>Designation:</strong> {{ team.current_designation }}<br>
+                         <a href="{{ team.url }}" class="btn btn-outline-success btn-sm">Read More</a>
+                     </td>
+                 </tr>
+                 {% endfor %}
+             </tbody>
+         </table>
+     </div>
+ </div>
+ {% endif %}
+ 
+<!--------------------------------------------------end------------------------------------------------------------->
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

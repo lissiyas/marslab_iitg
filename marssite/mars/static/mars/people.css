@@ -1,0 +1,135 @@
+
+
+
+
+.container-faculty {
+  margin-top: 20px;
+}
+
+.faculty-card {
+  width: 100%;
+  max-width: 350px; /* Adjust the card width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Ensures the image respects the border radius */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.faculty-card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+}
+
+.image-faculty img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.faculty-title h1 {
+  color: #A73121; /* Adjust title color */
+  
+}
+
+.faculty-body {
+  padding: 15px;
+}
+
+.dblp-text {
+  margin-top: 10px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .faculty-card {
+      max-width: 60%; /* Card takes full width in mobile view */
+      margin: 10px; /* Adjust margin as needed */
+  }
+
+  .image-faculty img {
+      width: 100%; /* Image takes full width of the card */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  .faculty-body {
+      padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  .faculty-title h1 {
+      font-size: 24px; /* Smaller font size for the title */
+  }
+
+  .dblp-text {
+      font-size: 14px; /* Smaller font size for button text */
+  }
+}
+
+
+
+
+
+
+
+.section {
+  margin-top: 20px; /* Adjust the top margin as needed */
+}
+
+/*new people template.......*/ 
+
+.bold-line {
+  border-top: 2px solid #000000; /* Makes the line bolder */
+  width: 100%; /* Adjust the width as desired */
+  margin: 0 auto; /* Centers the line */
+}
+
+
+
+
+
+
+
+
+    .table {
+      width: 100%; /* Ensure the table takes the full width */
+    }
+    
+    .col-slno {
+      width: 7%; /* Adjust the width as needed */
+      text-align: center;
+    }
+    
+    .col-name-image {
+      width: 10%; /* Adjust the width as needed */
+      text-align: center;
+    }
+    
+    .col-details {
+      width: 60%; /* Adjust the width as needed */
+      text-align: center;
+      font-size: larger;
+    }
+    
+
+    .image-container {
+      position: relative;
+      width: 100%; /* Responsive width, or set a fixed width if preferred */
+      padding-top: 100%; /* This maintains a 1:1 aspect ratio */
+      overflow: hidden; /* Ensures anything outside the container is cropped */
+  }
+  
+  .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Aligns the image to the top, cropping the bottom */
+}
+
+  
+.people-title{
+color: #A73121;
+}

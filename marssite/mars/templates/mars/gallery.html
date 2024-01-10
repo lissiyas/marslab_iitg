@@ -1,0 +1,97 @@
+{% extends "mars/home.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'mars/gallery.css' %}">
+
+
+
+<div class="container">
+  <div class="main-heading d-flex justify-content-center align-items-center">
+    <h1 style="font-size: 46px;">GALLERY</h1>
+  </div>
+  
+
+  <div class="row row-cols-4 mt-2">
+    {% for category in categories %}
+    <div class="col mt-2">
+      <div id="carouselExampleControls-{{ forloop.counter }}" class="carousel slide mt-2 custom-carousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          {% for image in category.eventimage_set.all %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <img src="{{ image.image.url }}" class="d-block img-fluid" alt="..." onclick="enlargeImage(this)">
+          </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls-{{ forloop.counter }}" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls-{{ forloop.counter }}" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <h2 class="text-center">{{ category.name }}</h2>
+    </div>
+    
+    {% endfor %}
+  </div>
+
+  
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="imageModal" class="modal justify-content-center ">
+  <span class="close"></span> <!-- This is the 'X' button -->
+  <img class="modal-content" id="enlargedImage">
+  <div id="caption"></div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+<script>
+  function enlargeImage(imgElement) {
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("enlargedImage");
+    var captionText = document.getElementById("caption");
+
+    modal.style.display = "flex"; // Show the modal
+    modalImg.src = imgElement.src;
+    captionText.innerHTML = imgElement.alt;
+
+
+  }
+
+  // Close modal if the user clicks outside of the image
+  window.onclick = function (event) {
+    var modal = document.getElementById("imageModal");
+    if (event.target === modal) {
+      modal.style.display = "none"; // Hide the modal when clicking outside
+    }
+  }
+
+</script>
+
+{% endblock content %}

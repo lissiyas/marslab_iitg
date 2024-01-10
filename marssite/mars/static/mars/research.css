@@ -1,0 +1,61 @@
+
+
+
+
+.container {
+  
+  
+  min-height: 100vh;
+
+}
+
+.project-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #A73121;;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background-color: #F2F1EB;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  
+  margin: 20px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card-content {
+  padding: 20px;
+}
+
+.project-title-card {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-details {
+  
+  margin-bottom: 10px;
+}
+
+.project-summary {
+  color: #f70000;
+}
+
+.custom-line{
+  border-color: darkorange;
+}
+
+
+
+

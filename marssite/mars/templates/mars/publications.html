@@ -1,0 +1,167 @@
+{% extends "mars/home.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+<link rel="stylesheet" href="{% static 'mars/publication.css' %}">
+
+<div class="container flex-column d-flex">
+  <div class="heading  flex-column  d-flex ">
+  
+    <div class="text-center">
+      <h1 class="news_new" style="color: #A73121;">PUBLICATIONS</h1>
+    </div>
+  
+    <div class="btn-group ">
+      <button type="button" class="btn btn-outline-success btn-publication mx-2" onclick="showPublication()">ALL</button>
+      <button type="button" class="btn btn-outline-success btn-publication mx-2" onclick="showList('list1')">CONFERENCE</button>
+      <button type="button" class="btn btn-outline-success btn-publication mx-2" onclick="showList('list2')">JOURNAL</button>
+      <button type="button" class="btn btn-outline-success btn-publication mx-2" onclick="showList('list3')">BOOKS</button>
+  </div>
+  
+  
+  
+  </div>
+
+ 
+  
+
+    
+    <div class=" publications">
+      <div class="list-container journals card-start ">
+        {% for journal in journals %}
+          
+          <div class="card  py-3 publication  ">
+            <div class="card-body publication-card">
+              <h5 class="card-title font-weight-bold">{{ journal.title }}</h5>
+              <h6 class="card-subtitle mb-2 font-italic">{{ journal.author }}</h6>
+              <p class="card-text">{{ journal.body }}</p>
+              <a href=" {{ journal.url }}" class="btn btn-primary">DOI</a>
+            </div>
+          </div> 
+          {% endfor %}
+
+      </div>
+      <!-- Rest of your content -->
+
+      
+
+
+      <div class="d-flex justify-content-center align-items-center ">
+        <div id="list1" class="list-container card-start " style="display: none;">
+          {% for journal in journals %}
+          {% if journal.publication_type == 'CONF' %}
+          <div class="card py-3  ">
+            <div class="card-body publication-card">
+              <h5 class="card-title font-weight-bold">{{ journal.title }}</h5>
+              <h6 class="card-subtitle mb-2 font-italic">{{ journal.author }}</h6>
+              <p class="card-text">{{ journal.body }}</p>
+              <a href=" {{ publication.url }}" class="btn mr-2 btn-primary">DOI</a>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+      
+      
+      
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-left   card-start">
+
+        <div id="list2" class="list-container  card-start" style="display: none;">
+          {% for journal in journals %}
+          {% if journal.publication_type == 'JRNL' %}
+          <div class="card  py-3 publication ">
+            <div class="card-body publication-card">
+              <h5 class="card-title font-weight-bold">{{ journal.title }}</h5>
+              <h6 class="card-subtitle mb-2 font-italic">{{ journal.author }}</h6>
+              <p class="card-text">{{ journal.body }}</p>
+              <a href=" {{ journal.url }}" class="btn btn-primary">DOI</a>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+
+        </div>
+      </div>
+
+      <div class="d-flex">
+
+        <div id="list3" class="list-container  card-start" style="display: none;">
+          {% for journal in journals %}
+          {% if journal.publication_type == 'BOOK' %}
+          <div class="card  py-3 publication ">
+            <div class="card-body publication-card">
+              <h5 class="card-title font-weight-bold">{{ journal.title }}</h5>
+              <h6 class="card-subtitle mb-2 font-italic">{{ journal.author }}</h6>
+              <p class="card-text">{{ journal.body }}</p>
+              <a href=" {{ book.url }}" class="btn btn-primary">DOI</a>
+            </div>
+          </div>
+         
+          {% endif %}
+          {% endfor %}
+
+        </div>
+      </div>
+      <!-- ... -->
+
+    </div>
+  
+</div>
+
+
+
+
+
+<script>
+  function showList(listId) {
+
+    var lists = document.querySelectorAll('.list-container');
+    lists.forEach(function(list) {
+      list.style.display = 'none';
+    });
+    // Hide all lists
+    var lists = document.querySelectorAll('div[id^="list"]');
+    lists.forEach(function (list) {
+      list.style.display = 'none';
+    });
+
+    // Show the selected list
+    var selectedList = document.getElementById(listId);
+    selectedList.style.display = 'block';
+  }
+
+
+  function toggleBtnGroup() {
+  var btnGroup = document.querySelector('.btn-group');
+  btnGroup.style.display = (btnGroup.style.display === 'none') ? 'block' : 'none';
+  btnGroup.style.animation = 'fadeIn 0.5s ease';
+}
+
+function showPublication() {
+    // Hide all elements with class 'list-container'
+    var allLists = document.querySelectorAll('.list-container');
+    allLists.forEach(function (list) {
+      list.style.display = 'none';
+    });
+
+    // Show the 'list-container' associated with journals
+    var journalList = document.querySelector('.list-container.journals');
+    if (journalList) {
+      journalList.style.display = 'block';
+    }
+  }
+</script>
+
+
+
+<script type="text/javascript" src="{% static 'mars/base.js' %}"></script>
+
+
+{% endblock content %}

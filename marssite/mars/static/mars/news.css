@@ -1,0 +1,40 @@
+.main-news {
+    
+    justify-content: center;
+    align-items: center;
+    
+
+    
+}
+
+.card-title{
+    color: black;
+    font-weight: 800;
+  
+  }
+
+.card-start{
+    width: 100%;
+}
+.card{
+    border: none;
+}
+
+.news_new{
+    color: #A73121;;
+}
+
+.publications {
+    background-color: #F2F1EB;
+  
+  width: 100%;
+  
+  }
+  .publication-card{
+    background-color: #F2F1EB;
+  }
+  
+
+  .container{
+    min-height: 100svh;
+  }
