@@ -13,7 +13,7 @@
  save the file
 
  8. now back to terminal type \
- python manage.py collectstatic \
+ python manage.py collectstatic 
  9. runs the code to check if the site is working on the host \
  python manage.py runserver 0.0.0.0:8000
 
