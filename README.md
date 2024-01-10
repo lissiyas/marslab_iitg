@@ -8,14 +8,14 @@
  5. pip install -r requirements.txt ( install all the requirements)
  6. sudo nano settings.py \
  in ALLOWED_HOSTS = ['0.0.0.0'] ( pass the ip address inside the array)
- 7. above the STATIC_URL
-###  add STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
-### save the file
+ 7. above the STATIC_URL \
+  add STATIC_ROOT = os.path.join(BASE_DIR, 'static') \
+ save the file
 
-## 8. now back to terminal type 
-### python manage.py collectstatic
-## 9 runs the code to check if the site is working on the host 
-### python manage.py runserver 0.0.0.0:8000
+ 8. now back to terminal type \
+ python manage.py collectstatic
+ 9 runs the code to check if the site is working on the host \
+ python manage.py runserver 0.0.0.0:8000
 
 
 
