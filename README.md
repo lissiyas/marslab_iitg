@@ -1,8 +1,8 @@
-# 1 copy the directory to the server system
+#  copy the directory to the server system
 
-## 1. scp -r directory_name  user@0.0.0.0:~/(sample server ) ## this will copy to the home folder of the sever
+ 1. scp -r directory_name  user@0.0.0.0:~/(sample server ) ## this will copy to the home folder of the sever
 
-## 2. sudo apt-get install python3-venv
+ 2. sudo apt-get install python3-venv
 ## 3. python-3 -m venv venv ( create a virutal enviorment in side the project directory, here its marslab_iitg)
 ## 4. source venv/bin/activate (activate the enviorment)
 ## 5. pip install -r requirements.txt ( install all the requirements)
