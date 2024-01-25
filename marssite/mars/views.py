@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import News,Journal, Team, Category, Research
+from .models import News,Journal, Team, Category, Research, Infrastructure
 
 
 
@@ -57,9 +57,11 @@ def alumni(request):
 
 def infrastructure(request):
     display_news = News.objects.filter(display=True)
+    infrastructure = Infrastructure.objects.all()
 
     context ={
-        'display_news':display_news
+        'display_news':display_news,
+        'infrastructure':infrastructure
     }
     return render(request,'mars/infrastructure.html',context)
 

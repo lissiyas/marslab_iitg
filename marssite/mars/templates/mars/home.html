@@ -22,9 +22,9 @@
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top" style="background-color: #4F6F52;">
   <div class="container-fluid mx-4">
       <a class="navbar-brand" href="{% url 'mars_home' %}">
-          <img src="{% static 'mars/logo_2.jpeg' %}" width="70" height="70" alt="...">
+          <img src="{% static 'mars/logo_2.jpeg' %}" width="90" height="90" alt="...">
       </a>
-      <a style="color: white; font-weight:700;">MARS LAB</a>
+      <a href="{% url 'mars_home' %}"  style="color: white; text-decoration:none; font-weight:700;">MARS LAB</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>

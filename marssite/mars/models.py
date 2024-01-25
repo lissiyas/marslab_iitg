@@ -114,3 +114,12 @@ class EventImage(models.Model):
 
     def __str__(self):
         return self.description
+    
+class Infrastructure(models.Model):
+    tittle = models.TextField(max_length=200)
+    model_name = models.TextField()
+    features = models.TextField()
+    image = models.ImageField(upload_to='infra/')
+
+    def __str__(self):
+        return self.tittle
