@@ -1,3 +1,11 @@
+#Fully Developed in Django 
+
+
+
+
+
+
+
 #  copy the directory to the server system
 
  1. scp -r directory_name  user@0.0.0.0:~/(sample server ) ## this will copy to the home folder of the sever
